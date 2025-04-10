@@ -1,0 +1,58 @@
+
+An electric circuit is composed of various electric and electronic components and every circuits energy consumption is measured in terms of Power i.e. energy consumed per unit time If the power of the circuit is known and either voltage or current is given, then it is easy to determine the resistance value of that particular circuit.
+
+Assume that there is a simple circuit having only one resistor and is connected to a power supply. The aim of this question is to complete the program to find the color code of the resistor, when the power of the circuit and the electric current is provided as the inputs. The color code page is given below for your reference.Consider an example, where the power 450000 and current = 10. Applying the formula, we can determine the resistance as 4500. Now, using this value, we can map the color codes in the above chart and find that the color bands on the resistor should be Yellow, Green and Red. In the above the chart, a mnemonic has been assigned to each color and using that we get the set of mnemonics as YLW, GRN and RED. Therefore the program should print the following
+
+YLW GRN RED
+
+It is important to note that the value of current cannot be more than power of the circuit. There if any of the below stated constraints is violated, then the output should be printed as
+
+Invalid input
+
+Function Description
+
+Complete the function findResistor ColorBands in the editor below. The function must state what must be returned or printed.
+
+findResistor ColorBands has the following parameter(s)
+
+power an integer to represent the power of the circuit
+
+current: an integer to represent the current passing through the circuitNote: Sometimes divide operations may result in floating point numbers. For e.g., the resistor value may come as 4550.64. In such cases, ignore the decimal part ie the number to be considered is 4550. Now, the 5 in the tens place is insignificant because that does not participate in the resistor color bands, and hence, consider the final result as 4500 only. In short, retain only the first 2 significant digits for resistor bands identification and consider the remaining significant digits as zeroes
+
+Constraints
+
+power > 0
+
+current > 0
+
+• power > current
+
+► Input Format For Custom Testing
+
+▼ Sample Case 0
+
+Sample Input For Custom Testing
+
+450000
+
+10
+
+Sample Output
+
+YLW GRN RED
+
+Explanation
+
+Based on the description of this program, it can be determined that the value of resistance is 4500 and the color code corresponding to it are Yellow, Green and Red. Therefore, the above output.
+
+Sample Input For Custom Testing
+
+45 46
+
+Sample Output
+
+Invalid input
+
+Explanation
+
+Since the input current value is more than the power, therefore it is flagged as invalid
