@@ -1,0 +1,40 @@
+import java.util.*;
+
+//RESISTANCE = power/(Current*current);
+
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value for the power");
+        int power = sc.nextInt();
+        System.out.print("Enter the value for the current");
+        int current = sc.nextInt();
+        
+        if(power <=0 || current<=0 || current>=power){
+            System.out.print("Invalid input");
+            return;
+        }
+        
+        int resistance = power / (current * current);
+        System.out.print("\n The Output for an resistance is:" + resistance + "\n");
+        
+        String mnemonics[] = {"BLK","BWN","RED","ONG","YLW","GRN","BLU","VLT","GRY","WHT"};
+        
+        while(resistance >= 100){
+            resistance/=10;
+        }
+        
+        int adjustedResist  = resistance;
+        while(adjustedResist * 10 <= power/(current*current)){
+            adjustedResist *= 10;
+        }
+        
+        String resStr = Integer.toString(adjustedResist);
+        
+        int firstDigit = Character.getNumericValue(resStr.charAt(0));
+        int secondDigit = Character.getNumericValue(resStr.charAt(1));
+        int multiplier = resStr.length()-2;
+        
+        System.out.print(mnemonics[firstDigit] + " " + mnemonics[secondDigit]  + " " + mnemonics[multiplier] );
+    }
+}
